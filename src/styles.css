@@ -132,3 +132,433 @@ img {
   background-color: var(--color-white);
   color: var(--color-dark);
 }
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-style: italic;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.about-image img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* Showcase grid layout */
+.client-info {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: 15px;
+}
+
+.showcase-main {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  position: relative;
+}
+
+.showcase-side {
+  position: relative;
+  height: 100%;
+}
+
+.showcase-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 20px;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-zoom:hover .caption {
+  opacity: 1;
+}
+
+/* Portfolio Categories */
+.portfolio-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.portfolio-item {
+  position: relative;
+  height: 450px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-content {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-content {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-content h3 {
+  color: white;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+/* Services */
+.services {
+  background-color: var(--color-secondary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--color-bg);
+  padding: 40px 30px;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.service-card h3 {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding-bottom: 20px;
+}
+
+.cascade-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.footer-brand h2 {
+  color: var(--color-primary);
+  font-style: italic;
+  font-size: 2.5rem;
+}
+
+.footer-links h4,
+.footer-form h4 {
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.socials a {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.footer-form input,
+.footer-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: var(--font-body);
+}
+
+.footer-form button {
+  width: 100%;
+  background: var(--color-primary);
+  border: none;
+  color: var(--color-dark);
+}
+
+.footer-form button:hover {
+  background: var(--color-white);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Responsive Setup */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .showcase-main {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: 400px;
+  }
+
+  .showcase-side {
+    height: 250px;
+  }
+
+  .portfolio-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .cascade-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .nav ul {
+    display: none;
+  }
+}
+
+/* Contact Form Classes */
+.form-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Premium Contact Form Styling */
+.contact-container {
+  max-width: 650px;
+  margin-top: 150px;
+  background: var(--color-white);
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.contact-desc {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #666;
+  font-size: 0.95rem;
+  padding: 0 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.premium-input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.05rem;
+  color: var(--color-dark);
+  border: none;
+  border-bottom: 2px solid #eaeaea;
+  outline: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+  resize: none;
+}
+
+.premium-input:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+.premium-label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 1rem;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: var(--font-body);
+}
+
+.premium-input:focus ~ .premium-label,
+.premium-input:not(:placeholder-shown) ~ .premium-label {
+  top: -20px;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn-premium {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 16px 32px;
+  border: none;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.btn-premium:hover {
+  background-color: var(--color-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px 20px;
+    margin-top: 120px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Stack form columns on mobile */
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Make header smaller on scroll for mobile */
+  .header.scrolled {
+    padding: 10px 0;
+  }
+  
+  .logo a {
+    font-size: 1.5rem;
+  }
+  
+  .footer-brand h2 {
+    font-size: 2rem;
+  }
+}
