@@ -1,0 +1,123 @@
+.section-desc {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  color: var(--color-text-muted);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.pricing-card.featured {
+  border-color: var(--color-primary);
+  transform: scale(1.05);
+  background: rgba(203, 168, 106, 0.05);
+  z-index: 2;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-primary);
+  color: var(--color-dark);
+  padding: 8px 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 20px;
+}
+
+.pricing-header h3 {
+  font-size: 2.2rem;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.pricing-features {
+  text-align: left;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  padding: 12px 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: var(--color-primary);
+  margin-right: 15px;
+  font-weight: 900;
+}
+
+/* Excellence Section */
+.excellence {
+  margin-top: 100px;
+}
+
+.excellence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.ex-item {
+  margin-bottom: 40px;
+}
+
+.ex-item h4 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.ex-item p {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+
+  .excellence-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

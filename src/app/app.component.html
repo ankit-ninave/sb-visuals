@@ -2,8 +2,9 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="container header-content">
     <div class="logo">
-      <a href="#">Sb.visuals</a>
+      <a routerLink="/">SbVisuals</a>
     </div>
+    
     <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
       <span></span>
       <span></span>
@@ -12,10 +13,24 @@
     <nav class="nav" [class.open]="isMenuOpen">
       <ul>
         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a></li>
-        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Us</a></li>
         <li><a routerLink="/portfolio" routerLinkActive="active" (click)="closeMenu()">Our Work</a></li>
         <li><a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a></li>
+        <li><a routerLink="/client-gallery" routerLinkActive="active" (click)="closeMenu()">Client Portal</a></li>
         <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+        <li class="theme-toggle-li">
+          <button class="theme-toggle-btn" (click)="toggleTheme()" [title]="(isDarkMode$ | async) ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+            <!-- Ultra-Minimal Sun (Dark Mode) -->
+            <svg *ngIf="isDarkMode$ | async" viewBox="0 0 24 24" fill="none" class="theme-icon sun">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M12 2v1.5M12 20.5V22M2 12h1.5M22 12h-1.5M19.07 4.93l-1.06 1.06M6 18l-1.06 1.06M19.07 19.07l-1.06-1.06M6 6l-1.06-1.06" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <!-- Ultra-Minimal Moon (Light Mode) -->
+            <svg *ngIf="!(isDarkMode$ | async)" viewBox="0 0 24 24" fill="none" class="theme-icon moon">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
       </ul>
     </nav>
   </div>
@@ -29,13 +44,13 @@
 <footer class="footer section" id="contact">
   <div class="container cascade-footer">
     <div class="footer-brand">
-      <h2>sb.visuals</h2>
+      <h2>SbVisuals</h2>
       <p>Luxury Wedding Photography & Films</p>
     </div>
     <div class="footer-links">
       <h4>Inquiries</h4>
-      <p>hello&#64;sbvisuals.com</p>
-      <p>+91 98765 43210</p>
+      <p>hello&#64;SbVisuals.com</p>
+      <p>+91 99099099099</p>
       <div class="socials">
         <a href="#">Instagram</a>
         <a href="#">Viper</a>
@@ -54,6 +69,13 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 sb.visuals. All Rights Reserved.</p>
+    <p>&copy; 2026 SbVisuals. All Rights Reserved.</p>
   </div>
 </footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/911234567890" class="whatsapp-float fade-reveal" target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.031 6.172c-2.32 0-4.519.903-6.16 2.544-3.399 3.401-3.399 8.927 0 12.328l-1.097 3.291 3.364-1.077c1.173.642 2.49 1.011 3.893 1.011 4.79 0 8.674-3.884 8.674-8.674 0-4.79-3.884-8.673-8.674-8.673zm5.529 12.312c-.226.635-1.127 1.162-1.876 1.338-.518.121-1.192.215-3.414-.702-2.842-1.173-4.678-4.06-4.819-4.248-.141-.188-1.144-1.522-1.144-2.903 0-1.381.728-2.056 1.011-2.338.282-.282.612-.353.823-.353.212 0 .423.003.607.011.192.008.452-.073.708.546.257.62.875 2.13.951 2.285.076.155.127.336.025.542-.102.206-.153.335-.304.511-.151.176-.317.391-.452.524-.151.155-.31.325-.133.626.177.301.787 1.299 1.688 2.099.9.8 1.657 1.047 1.958 1.198.301.151.474.127.65-.076.177-.203.754-.875.956-1.177.203-.301.405-.251.684-.151.278.1.1.203 1.763.926 1.663.723 1.764.851 1.764.851z"/>
+  </svg>
+</a>

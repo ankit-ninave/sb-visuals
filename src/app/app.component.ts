@@ -1,22 +1,25 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, CommonModule, RouterLink, RouterLinkActive, AsyncPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title = 'sb-visuals';
+  title = 'SbVisuals';
   isScrolled = false;
   isHomePage = true;
   isMenuOpen = false;
+  isDarkMode$: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public themeService: ThemeService) {
+    this.isDarkMode$ = this.themeService.isDarkMode$;
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
@@ -33,6 +36,10 @@ export class AppComponent implements OnInit {
 
   closeMenu() {
     this.isMenuOpen = false;
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 
   ngOnInit() {
@@ -57,15 +64,15 @@ export class AppComponent implements OnInit {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('revealed');
             observer.unobserve(entry.target);
           }
         });
-      }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+      }, { rootMargin: '0px 0px -100px 0px', threshold: 0.1 });
 
-      document.querySelectorAll('.fade-in-up, .slide-in-left, .scale-up').forEach(el => {
+      document.querySelectorAll('[data-reveal]').forEach(el => {
         observer.observe(el);
       });
-    }, 100);
+    }, 200);
   }
 }

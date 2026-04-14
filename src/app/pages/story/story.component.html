@@ -1,0 +1,49 @@
+<div class="story-page" *ngIf="story">
+  <!-- Cinematic Hero -->
+  <section class="story-hero" [style.backgroundImage]="'url(' + story.heroImage + ')'">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in-up">
+      <h4 class="section-subtitle">{{ story.date }} | {{ story.location }}</h4>
+      <h1 class="story-title">{{ story.couple }}</h1>
+      <p class="story-caption">{{ story.caption }}</p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <nav class="story-nav container">
+    <ul>
+      <li *ngFor="let cat of story.categories; let i = index" 
+          [class.active]="activeCategoryIndex === i" 
+          (click)="setActiveCategory(i)">
+        {{ cat.title }}
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Categorized Galleries -->
+  <section class="section story-gallery container">
+    <div class="category-meta fade-in-up">
+      <h2 class="category-title">{{ story.categories[activeCategoryIndex].title }}</h2>
+      <p>{{ story.categories[activeCategoryIndex].description }}</p>
+    </div>
+
+    <div class="masonry-grid">
+      <div class="masonry-item hover-zoom fade-in-up" 
+           *ngFor="let photo of story.categories[activeCategoryIndex].images; let j = index">
+        <img [src]="photo" [alt]="story.couple + ' ' + story.categories[activeCategoryIndex].title + ' ' + j">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Social Share / Book -->
+  <section class="section story-footer container">
+    <div class="gold-line"></div>
+    <div class="footer-content fade-in-up">
+      <h3>Ready to tell your story?</h3>
+      <div class="cta-group">
+        <a routerLink="/contact" class="btn-primary">Check Availability</a>
+        <a href="https://wa.me/911234567890" class="btn-primary" style="background-color: #25D366; border-color: #25D366; color: white;">WhatsApp Contact</a>
+      </div>
+    </div>
+  </section>
+</div>

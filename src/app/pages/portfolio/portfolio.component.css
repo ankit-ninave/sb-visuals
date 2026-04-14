@@ -1,0 +1,224 @@
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.portfolio-filters ul {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+  padding: 0 40px;
+}
+
+.portfolio-filters li {
+  padding: 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.portfolio-filters li:hover, .portfolio-filters li.active {
+  color: var(--color-primary);
+}
+
+.portfolio-filters li::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: var(--transition-smooth);
+}
+
+.portfolio-filters li.active::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .portfolio-filters ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 10px;
+  }
+}
+
+/* Portfolio Item Overlay */
+.item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(5px);
+}
+
+.masonry-item:hover .item-overlay {
+  opacity: 1;
+}
+
+.item-meta h3 {
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 5px;
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+}
+
+.item-meta p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+  transition-delay: 0.1s;
+}
+
+.masonry-item:hover .item-meta h3,
+.masonry-item:hover .item-meta p {
+  transform: translateY(0);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: zoom-out;
+}
+
+.lightbox-content {
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  position: relative;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/* Masonry Pinterest Layout */
+.masonry-column-grid {
+  column-count: 3;
+  column-gap: 30px;
+  width: 100%;
+}
+
+.masonry-item {
+  display: inline-block; /* Essential for columns */
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  cursor: pointer;
+  background: var(--color-dark);
+}
+
+.item-visual-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.moment-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  padding: 5px 12px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  z-index: 2;
+  border-radius: 2px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-img {
+  flex-grow: 1;
+  overflow: hidden;
+  background: #000;
+}
+
+.lightbox-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-info {
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-bg);
+  border-top: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.lightbox-info h2 {
+  font-style: italic;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.lightbox-info p {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 992px) {
+  .masonry-column-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonry-column-grid {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .lightbox { padding: 10px; }
+  .lightbox-info { flex-direction: column; gap: 20px; text-align: center; }
+  .close-btn { top: 10px; right: 10px; font-size: 2rem; }
+}

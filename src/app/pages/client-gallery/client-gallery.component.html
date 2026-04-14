@@ -1,0 +1,46 @@
+<section class="section client-login" *ngIf="!isUnlocked">
+  <div class="container login-container fade-in-up">
+    <div class="login-box glass gold-glow">
+      <h4 class="section-subtitle">Private Access</h4>
+      <h2 class="section-title">Client Gallery</h2>
+      <p class="login-desc">Please enter your wedding date as the access key to view your collection.</p>
+      
+      <form (submit)="checkPassword()">
+        <div class="password-field">
+          <input type="password" name="password" [(ngModel)]="password" placeholder="DDMMYY" maxlength="6">
+          <button type="submit" class="btn-primary">Unlock Gallery</button>
+        </div>
+        <p class="error-msg" *ngIf="loginError">Invalid Access Key. Please try again or contact us.</p>
+      </form>
+
+      <div class="login-tip">
+        <p>💡 Tip: Use the format Day-Month-Year (e.g., 141125 for 14th Nov 2025)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Unlocked Gallery View -->
+<section class="section unlocked-gallery" *ngIf="isUnlocked">
+  <div class="container fade-in-up">
+    <div class="gallery-header">
+      <div>
+        <h4 class="section-subtitle">Welcome Back</h4>
+        <h1 class="story-title" style="text-align: left; font-size: 3rem;">{{ unlockedGallery.couple }}</h1>
+        <p class="image-meta">{{ unlockedGallery.imageCount }} High-Resolution Images Ready</p>
+      </div>
+      <button (click)="logout()" class="btn-link">Sign Out</button>
+    </div>
+
+    <div class="action-bar gold-line" style="margin: 40px 0; padding-top: 20px;">
+      <button class="btn-primary">Download All (Original)</button>
+      <button class="btn-link" style="margin-left: 20px;">Order Premium Album</button>
+    </div>
+
+    <div class="masonry-grid">
+      <div class="masonry-item hover-zoom" *ngFor="let img of unlockedGallery.images">
+        <img [src]="img" alt="Gallery photo">
+      </div>
+    </div>
+  </div>
+</section>

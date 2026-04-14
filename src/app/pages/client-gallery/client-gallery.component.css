@@ -1,0 +1,94 @@
+.login-container {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.login-desc {
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+}
+
+.password-field {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.password-field input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.password-field input:focus {
+  border-color: var(--color-primary);
+  background: rgba(255,255,255,0.08);
+}
+
+.error-msg {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-top: 15px;
+}
+
+.login-tip {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Unlocked View */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.image-meta {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.btn-link {
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.btn-link:hover {
+  color: var(--color-white);
+  border-bottom-color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .gallery-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .login-box { padding: 40px 20px; }
+}

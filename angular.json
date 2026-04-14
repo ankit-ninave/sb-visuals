@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sb-visuals": {
+    "SbVisuals": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sb-visuals",
+            "outputPath": "dist/SbVisuals",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sb-visuals:build:production"
+              "buildTarget": "SbVisuals:build:production"
             },
             "development": {
-              "buildTarget": "sb-visuals:build:development"
+              "buildTarget": "SbVisuals:build:development"
             }
           },
           "defaultConfiguration": "development"
