@@ -1,26 +1,61 @@
-<section class="section portfolio" id="portfolio">
+<section class="section portfolio">
   <div class="container fade-in-up">
-    <h4 class="section-subtitle">Our Signature Style</h4>
-    <h2 class="section-title">Portfolio Categories</h2>
-    <div class="portfolio-categories">
-      <div class="portfolio-item hover-zoom">
-        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Pre-Wedding">
-        <div class="portfolio-content">
-          <h3>Pre-Wedding</h3>
-        </div>
-      </div>
-      <div class="portfolio-item hover-zoom">
-        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Weddings">
-        <div class="portfolio-content">
-          <h3>Weddings</h3>
-        </div>
-      </div>
-      <div class="portfolio-item hover-zoom">
-        <img src="https://images.unsplash.com/photo-1549416878-b9ca95e26903?auto=format&fit=crop&w=800&q=80" alt="Editorial">
-        <div class="portfolio-content">
-          <h3>Editorial</h3>
+    <h4 class="section-subtitle">Our Signature Work</h4>
+    <h2 class="section-title">Visual Narratives</h2>
+
+    <!-- Filters -->
+    <nav class="portfolio-filters">
+      <ul>
+        <li *ngFor="let cat of categories" 
+            [class.active]="selectedCategory === cat"
+            (click)="setCategory(cat)">
+          {{ cat }}
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Masonry Gallery -->
+    <div class="masonry-wrapper" style="margin-top: 60px;">
+      <div class="masonry-column-grid">
+        <div class="masonry-item hover-zoom fade-in-up" 
+             *ngFor="let item of filteredItems"
+             (click)="openLightbox(item)">
+          <div class="item-visual-wrapper">
+            <img [src]="item.url" [alt]="item.title" loading="lazy">
+            <div class="moment-badge" *ngIf="item.label">{{ item.label }}</div>
+          </div>
+          <div class="item-overlay">
+            <div class="item-meta">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.category }} • Archive</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Pagination / Load More -->
+    <div style="text-align: center; margin-top: 80px;">
+      <button class="btn-primary">Load More Stories</button>
+    </div>
   </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" *ngIf="selectedImage" (click)="closeLightbox()">
+  <div class="lightbox-content glass gold-glow" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeLightbox()">&times;</button>
+    <div class="lightbox-img">
+      <img [src]="selectedImage.url" [alt]="selectedImage.title">
+    </div>
+    <div class="lightbox-info">
+      <div class="left">
+        <h2>{{ selectedImage.title }}</h2>
+        <p>{{ selectedImage.category }} | Cinematic Archive</p>
+      </div>
+      <div class="right" *ngIf="selectedImage.storyId">
+        <button class="btn-primary" (click)="viewStory(selectedImage.storyId)">View Full Story</button>
+      </div>
+    </div>
+  </div>
+</div>

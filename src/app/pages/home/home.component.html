@@ -1,43 +1,182 @@
 <section class="hero" id="home">
-  <div class="hero-bg" style="background-image: url('/uniq_hero.png');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content fade-in-up">
-    <h1>Capturing Timeless Love Stories</h1>
-    <p>sb.visuals</p>
-    <br>
-    <a routerLink="/portfolio" class="btn-primary">View Portfolio</a>
+  <!-- Cinematic Video Background -->
+  <div class="video-background scale-zoom">
+    <video autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?fm=webp&w=1920&q=80">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-walking-in-a-park-4003-large.mp4"
+        type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content" data-reveal>
+    <h4 class="hero-eyebrow">The Legacy & Luxury of Indian Weddings</h4>
+    <h1 class="cinematic-title">Stories meant to be felt.
+    </h1>
+    <p class="hero-branding">Premium Cinematic Wedding Storytelling • Global Destination Archive</p>
+    <div class="hero-ctas">
+      <a routerLink="/portfolio" class="btn-primary">Explore Global Stories</a>
+      <a href="https://wa.me/911234567890" class="btn-primary glass" style="margin-left: 15px;">Check Your Wedding
+        Date</a>
+    </div>
   </div>
 </section>
 
-<!-- Include Showcase on Home page for story -->
-<section class="section showcase" id="showcase">
-  <div class="container fade-in-up">
-    <h4 class="section-subtitle">Featured Client</h4>
-    <h2 class="section-title">The Royal Udaipur Wedding</h2>
-    <div class="client-info">
-      <p><strong>Clients:</strong> Ananya & Rahul | <strong>Date:</strong> November 14, 2025</p>
+<!-- Love Stories Section - Editorial Asymmetrical Layout -->
+<section class="section couple-stories">
+  <div class="container">
+    <div class="section-header" style="text-align: left; margin-bottom: 80px;" data-reveal>
+      <h4 class="section-subtitle" style="text-align: left;">Journal of Love</h4>
+      <h2 class="section-title" style="text-align: left;">The Real Weddings</h2>
     </div>
-    <div class="showcase-grid">
-      <div class="showcase-main hover-zoom">
-        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Grand venue setup at Udaipur Palace">
-        <div class="caption">The Palace Setup</div>
+
+    <div class="editorial-grid"
+      style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: start;">
+      <!-- Ananya & Rahul Story -->
+      <div class="story-card-editorial" data-reveal>
+        <div class="editorial-img hover-zoom"
+          style="height: 650px; border-radius: 2px; overflow: hidden; position: relative;">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?fm=webp&w=1200&q=80"
+            alt="Ananya & Rahul" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="editorial-label"
+            style="position: absolute; top: 40px; left: -40px; transform: rotate(-90deg); color: white; background: var(--color-primary); padding: 5px 20px; font-size: 0.7rem; letter-spacing: 2px;">
+            THE UDAIPUR LEGACY</div>
+        </div>
+        <div class="editorial-content" style="padding: 40px 0;">
+          <h3 style="font-size: 3.5rem; margin: 0 0 10px;">Ananya ❤️ Rahul</h3>
+          <p class="editorial-meta"
+            style="color: var(--color-primary); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2.5px; margin-bottom: 20px;">
+            November 2025 • City Palace, Udaipur</p>
+          <p
+            style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.6; font-style: italic; margin-bottom: 30px;">
+            "A royal union where tradition met timeless elegance against the golden sunsets of Rajasthan."</p>
+          <a routerLink="/story/ananya-rahul" class="btn-link-premium">View Full Story →</a>
+        </div>
       </div>
-      <div class="showcase-side hover-zoom">
-        <img src="https://images.unsplash.com/photo-1543165384-5bd5530f2f4c?auto=format&fit=crop&w=400&q=80" alt="Ananya in red lehenga">
-        <div class="caption">Bridal Portraits</div>
+
+      <!-- Secondary Stories Column -->
+      <div class="editorial-side-col" style="display: flex; flex-direction: column; gap: 80px; margin-top: 100px;">
+        <div class="side-story" data-reveal>
+          <div class="side-img hover-zoom" style="height: 400px; border-radius: 2px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?fm=webp&w=800&q=80"
+              alt="Isha & Kabir" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="margin-top: 30px;">
+            <h3 style="font-size: 2.2rem; margin-bottom: 5px;">Isha & Kabir</h3>
+            <p style="font-size: 0.75rem; letter-spacing: 2px; color: var(--color-primary); text-transform: uppercase;">
+              Jaipur Curation • November 2024</p>
+            <p style="color: var(--color-text-muted); font-style: italic; margin-top: 15px;">"Soul-stirring moments in
+              the heart of the Pink City."</p>
+            <a routerLink="/story/isha-kabir" class="btn-link-premium"
+              style="margin-top: 20px; display: inline-block;">View Full Story →</a>
+          </div>
+        </div>
+        <div class="side-story" data-reveal>
+          <div class="side-img hover-zoom" style="height: 300px; border-radius: 2px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?fm=webp&w=800&q=80"
+              alt="Snehal & Rohan" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="margin-top: 30px;">
+            <h3 style="font-size: 2.2rem; margin-bottom: 5px;">Snehal & Rohan</h3>
+            <p style="font-size: 0.75rem; letter-spacing: 2px; color: var(--color-primary); text-transform: uppercase;">
+              Mumbai Highlights • December 2024</p>
+            <a routerLink="/story/snehal-rohan" class="btn-link-premium"
+              style="margin-top: 20px; display: inline-block;">View Full Story →</a>
+          </div>
+        </div>
       </div>
-      <div class="showcase-side hover-zoom">
-        <img src="https://images.unsplash.com/photo-1532054942125-1e35a1a1fde9?auto=format&fit=crop&w=400&q=80" alt="Rahul in royal sherwani">
-        <div class="caption">The Groom</div>
+    </div>
+  </div>
+</section>
+
+<!-- The Cinematic Films (Upgrade) -->
+<section class="section glass" style="background: rgba(0,0,0,0.4);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 100px;" data-reveal>
+      <h4 class="section-subtitle">The Film Boutique</h4>
+      <h2 class="section-title">8K Cinematic Archive</h2>
+    </div>
+    <div class="films-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
+      <div class="film-item-premium hover-zoom" data-reveal style="position: relative; height: 500px; cursor: pointer;">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+          alt="Film 1" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="film-overlay"
+          style="position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; opacity: 0.8; transition: var(--transition-smooth);">
+          <div class="play-btn"
+            style="width: 60px; height: 60px; border: 1px solid white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            ▶</div>
+          <h3>Peshwa Heirloom</h3>
+          <p style="font-size: 0.7rem; letter-spacing: 2px;">CINEMATIC SHORT</p>
+        </div>
       </div>
-      <div class="showcase-side hover-zoom">
-        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=400&q=80" alt="The Couple">
-        <div class="caption">Golden Hour Romance</div>
+      <div class="film-item-premium hover-zoom" data-reveal
+        style="position: relative; height: 500px; cursor: pointer; margin-top: 100px;">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+          alt="Film 2" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="film-overlay"
+          style="position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; opacity: 0.8; transition: var(--transition-smooth);">
+          <div class="play-btn"
+            style="width: 60px; height: 60px; border: 1px solid white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            ▶</div>
+          <h3>The Desert Veil</h3>
+          <p style="font-size: 0.7rem; letter-spacing: 2px;">DOCUMENTARY FEATURE</p>
+        </div>
       </div>
-      <div class="showcase-side hover-zoom">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80" alt="Candid Moment">
-        <div class="caption">Intimate Moments</div>
+      <div class="film-item-premium hover-zoom" data-reveal style="position: relative; height: 500px; cursor: pointer;">
+        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+          alt="Film 3" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="film-overlay"
+          style="position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; opacity: 0.8; transition: var(--transition-smooth);">
+          <div class="play-btn"
+            style="width: 60px; height: 60px; border: 1px solid white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            ▶</div>
+          <h3>Urban Romance</h3>
+          <p style="font-size: 0.7rem; letter-spacing: 2px;">WEDDING TEASER</p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Client Chronicles (Testimonials) -->
+<section class="section testimonials container">
+  <div style="text-align: center; max-width: 800px; margin: 0 auto;" data-reveal>
+    <h4 class="section-subtitle">Client Chronicles</h4>
+    <h2 class="section-title">The Words of the Beloved</h2>
+    <div class="testimonial-slider" style="margin-top: 80px;">
+      <div class="testimonial-item" style="display: flex; flex-direction: column; align-items: center; gap: 40px;">
+        <div class="testimonial-img-wrapper"
+          style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 2px solid var(--color-primary); padding: 5px;">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?fm=webp&w=300&q=80" alt="Priya & Amit"
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+        </div>
+        <p
+          style="font-family: var(--font-heading); font-style: italic; font-size: 2.4rem; line-height: 1.4; color: var(--color-white); max-width: 900px;">
+          "SB Visuals didn't just capture our wedding; they captured the feeling of being there. Every time we watch our
+          film, we relive the magic all over again. They are true artists of legacy."
+        </p>
+        <div style="margin-top: 10px; text-align: center;">
+          <h5 style="text-transform: uppercase; letter-spacing: 4px; color: var(--color-primary); margin-bottom: 5px;">
+            Priya & Amit</h5>
+          <p
+            style="font-size: 0.75rem; color: var(--color-text-muted); letter-spacing: 2px; text-transform: uppercase;">
+            The Oberoi Udaivilas • February 2025</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Archive CTA -->
+<section class="section cta-bar container" style="border-top: 1px solid rgba(255,255,255,0.05);">
+  <div style="text-align: center;" data-reveal>
+    <h2 style="font-size: 5rem; line-height: 1; margin-bottom: 30px;">Ready to capture <br> your legacy?</h2>
+    <p
+      style="color: var(--color-text-muted); margin-bottom: 60px; font-size: 1.2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+      Booking open for 2026/27 seasons. Limited elite dates available per boutique season for global destinations.</p>
+    <div class="cta-group" style="display: flex; justify-content: center; gap: 20px;">
+      <a routerLink="/contact" class="btn-primary">Reserve Your Date</a>
+      <a href="https://wa.me/911234567890" class="btn-primary glass">Check Availability Now</a>
     </div>
   </div>
 </section>
